@@ -173,18 +173,10 @@ public class FundamentalProgramming7 {
         {
             System.out.println("User Not Found");
         }
-
-        displayTransaction(listTransaction);
-        displayTransactionDetail(listDetailTransaction, 0);
-        System.out.println("INDEX LIST TRANSACTION NOW : " +
-                getIndexNotNull(listTransaction));
-        System.out.println("INDEX LIST TRANSACTION DETAIL NOW : " +
-                getIndexNotNull(listDetailTransaction));
     }
 
     // VOID DISPLAY FOR INPUT ITEM
     public static void inputItem(String[] itemBuy, int[] quantity, int totalProduct) {
-        Scanner in = new Scanner(System.in);
         boolean isFinish = false;
         int n = 0;
         while (!isFinish && n < totalProduct) {
@@ -240,7 +232,7 @@ public class FundamentalProgramming7 {
         }
         System.out.println("Total Transaction\t\t: " + setFormatCurrency(totalTransaction));
         System.out.println("Transaction Fee (Rp)\t\t: " + setFormatCurrency(totalFee));
-        System.out.println("Grand Total\t: " + setFormatCurrency(totalTransactionWithFee));
+        System.out.println("Grand Total\t\t\t: " + setFormatCurrency(totalTransactionWithFee));
     }
 
     // FIND USER
@@ -426,7 +418,6 @@ public class FundamentalProgramming7 {
     // DISPLAY TRANSACTION
     public static void displayTransaction(String[][] listTransactions) {
         System.out.println("=====List Transaction=====");
-
         if (getIndexNotNull(listTransactions) == 0) {
             System.out.println("NO TRANSACTION HISTORY");
         } else {
@@ -440,42 +431,25 @@ public class FundamentalProgramming7 {
                 System.out.println(
                         "Transaction Fee (Rp)\t\t: " + setFormatCurrency(Float.parseFloat(listTransactions[i][3])));
                 System.out.println(
-                        "Grand Total\t: " + setFormatCurrency(Float.parseFloat(listTransactions[i][4])));
+                        "Grand Total\t\t\t: " + setFormatCurrency(Float.parseFloat(listTransactions[i][4])));
+                System.out.println();
             }
         }
     }
 
     // DISPLAY TRANSACTION
     public static void displayTransactionDetail(String[][] listTransactionDetails, int transactionId) {
-        int j = 1;
-        String date = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
         System.out.println("=====List Transaction Detail=====");
 
         for (int i = 0; i < getIndexNotNull(listTransactionDetails); i++) {
-            // if (Integer.valueOf(listTransactionDetails[i][4]) == transactionId) {
             System.out.println("Username\tName\t\tQuantity\tTotal Price Item");
-            // if (Integer.valueOf(listTransactionDetails[transactionId][i]) != 0) {
             System.out.println(
                     listUsers[Integer.valueOf(listTransactionDetails[transactionId][0])] + "\t\t"
                             + listTransactionDetails[i][1]
                             + "\t\t"
                             + listTransactionDetails[i][2] + "\t\t" +
                             listTransactionDetails[i][3]);
-            j++;
-            // }
-            // }
-
+            System.out.println();
         }
     }
 }
-
-// Yang dimasukan kedalam transaction adalah id (selesai)
-// Parameter yang terdapat dalam method adalah parameter yang akan diolah
-// (selesai)
-// Variable yang akan dijadikan sebagai pembanding dalam sebuah method dijadikan
-// publik (selesai)
-// Menambahkan fitur login pada sebuah aplikasi (selesai)
-// Stok pada sebuah produk. Produk tidak akan ditampilkan apabila stok 0
-// (selesai)
-// Jika admin input pembelian dengan item melebihi jumlah stok maka quantity
-// akan menyesuaikan jumlah stok (selesai)
