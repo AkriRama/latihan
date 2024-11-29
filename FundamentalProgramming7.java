@@ -176,10 +176,6 @@ public class FundamentalProgramming7 {
 
         displayTransaction(listTransaction);
         displayTransactionDetail(listDetailTransaction, 0);
-        System.out.println("INDEX LIST TRANSACTION NOW : " +
-                getIndexNotNull(listTransaction));
-        System.out.println("INDEX LIST TRANSACTION DETAIL NOW : " +
-                getIndexNotNull(listDetailTransaction));
     }
 
     // VOID DISPLAY FOR INPUT ITEM
@@ -452,9 +448,7 @@ public class FundamentalProgramming7 {
         System.out.println("=====List Transaction Detail=====");
 
         for (int i = 0; i < getIndexNotNull(listTransactionDetails); i++) {
-            // if (Integer.valueOf(listTransactionDetails[i][4]) == transactionId) {
             System.out.println("Username\tName\t\tQuantity\tTotal Price Item");
-            // if (Integer.valueOf(listTransactionDetails[transactionId][i]) != 0) {
             System.out.println(
                     listUsers[Integer.valueOf(listTransactionDetails[transactionId][0])] + "\t\t"
                             + listTransactionDetails[i][1]
@@ -462,20 +456,6 @@ public class FundamentalProgramming7 {
                             + listTransactionDetails[i][2] + "\t\t" +
                             listTransactionDetails[i][3]);
             j++;
-            // }
-            // }
-
         }
     }
 }
-
-// Yang dimasukan kedalam transaction adalah id (selesai)
-// Parameter yang terdapat dalam method adalah parameter yang akan diolah
-// (selesai)
-// Variable yang akan dijadikan sebagai pembanding dalam sebuah method dijadikan
-// publik (selesai)
-// Menambahkan fitur login pada sebuah aplikasi (selesai)
-// Stok pada sebuah produk. Produk tidak akan ditampilkan apabila stok 0
-// (selesai)
-// Jika admin input pembelian dengan item melebihi jumlah stok maka quantity
-// akan menyesuaikan jumlah stok (selesai)
